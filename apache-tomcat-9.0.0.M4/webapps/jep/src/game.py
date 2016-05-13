@@ -33,7 +33,7 @@ class Game():
     else:
       if question.state != 0:
         player.update_score(-question.score)
-      self.output_request(question_id, 1, 0)
+      self.output_request(question_id, 1, 1)
       question.state = 1
 
     self.question_list.dump_questions_pickle()
