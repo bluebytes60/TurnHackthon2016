@@ -1,0 +1,770 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="./js/jquery-2.2.3.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Scores</title>
+
+    <script type="text/javascript">
+        var filePath = "./status/score";
+        var score_black = 0;
+        var score_white = 0;
+        var score_green = 0;
+        var score_yellow = 0;
+        var preScores = ["0","0","0","0"];
+        document.onkeydown = key_control;
+
+        function readText() {
+            $.ajax({
+                url: filePath,
+                async: false,
+                success: function (data) {
+                    var res = data.split(" ");
+                    if (res[0] != preScores[0]) {
+                        document.getElementById('audiotag1').play();
+                        set_score_black(res[0]);
+                    }
+                    if (res[1] != preScores[1]) {
+                        document.getElementById('audiotag1').play();
+                        set_score_white(res[1]);
+                    }
+                    if (res[2] != preScores[2]) {
+                        document.getElementById('audiotag1').play();
+                        set_score_green(res[2]);
+                    }
+                    if (res[3] != preScores[3]) {
+                        document.getElementById('audiotag1').play();
+                        set_score_yellow(res[3]);
+                    }
+                    preScores = res;
+                }
+            });
+        }
+
+        function add_score_black() {
+            score_black++;
+            //document.getElementById('audiotag1').play();
+            document.getElementById('boldStuff_1').innerHTML = score_black;
+        }
+
+        function add_score_white() {
+            score_white++;
+            //document.getElementById('audiotag1').play();
+            document.getElementById('boldStuff_2').innerHTML = score_white;
+        }
+
+        function set_score_black(v) {
+            score_black = v;
+            //document.getElementById('audiotag1').play();
+            document.getElementById('boldStuff_1').innerHTML = score_black;
+        }
+
+        function set_score_white(v) {
+            score_white = v;
+            //document.getElementById('audiotag1').play();
+            document.getElementById('boldStuff_2').innerHTML = score_white;
+        }
+
+        function set_score_green(v) {
+            score_green = v;
+            //document.getElementById('audiotag1').play();
+            document.getElementById('boldStuff_3').innerHTML = score_green;
+        }
+
+        function set_score_yellow(v) {
+            score_yellow = v;
+            //document.getElementById('audiotag1').play();
+            document.getElementById('boldStuff_4').innerHTML = score_yellow;
+        }
+
+        function reset_score() {
+            score_black = 0;
+            score_white = 0;
+            score_green = 0;
+            score_yellow = 0;
+            document.getElementById('audiotag1').play();
+            document.getElementById('boldStuff_1').innerHTML = score_black;
+            document.getElementById('boldStuff_2').innerHTML = score_white;
+            document.getElementById('boldStuff_3').innerHTML = score_black;
+            document.getElementById('boldStuff_4').innerHTML = score_white;
+        }
+
+        function default_settings() {
+            document.getElementById('black').style.background = '#000';
+            document.getElementById('white').style.background = '#000';
+            document.getElementById('green').style.fontSize = '500px';
+            document.getElementById('yellow').style.fontSize = '500px';
+
+        }
+
+
+        function key_control(e) {
+
+            if (e.keyCode == 57) {
+                score_black++;
+                document.getElementById('audiotag1').play();
+                document.getElementById('boldStuff_1').innerHTML = score_black;
+            } else if (e.keyCode == 48) {
+                score_black--;
+                document.getElementById('audiotag1').play();
+                document.getElementById('boldStuff_1').innerHTML = score_black;
+            } else if (e.keyCode == 219) {
+                score_white++;
+                document.getElementById('audiotag1').play();
+                document.getElementById('boldStuff_2').innerHTML = score_white;
+            } else if (e.keyCode == 221) {
+                score_white--;
+                document.getElementById('audiotag1').play();
+                document.getElementById('boldStuff_2').innerHTML = score_white;
+            } else if (e.keyCode == 27) {
+                score_black = 0;
+                score_white = 0;
+                document.getElementById('audiotag1').play();
+                document.getElementById('boldStuff_1').innerHTML = score_black;
+                document.getElementById('boldStuff_2').innerHTML = score_white;
+            }
+        }
+
+
+        function changeColorBlack(color) {
+            document.getElementById('black').style.background = color;
+        }
+
+        function changeColorWhite(color) {
+            document.getElementById('white').style.background = color;
+        }
+
+        function changeTitleSize(size) {
+            document.getElementById('whiteText').style.fontSize = size;
+            document.getElementById('blackText').style.fontSize = size;
+            document.getElementById('greenText').style.fontSize = size;
+            document.getElementById('yellowText').style.fontSize = size;
+        }
+
+        function changeSize(size) {
+            document.getElementById('white').style.fontSize = size;
+            document.getElementById('black').style.fontSize = size;
+            document.getElementById('green').style.fontSize = size;
+            document.getElementById('yellow').style.fontSize = size;
+        }
+
+        function changeTitleColor(color) {
+            document.getElementById('blackText').color = color;
+            document.getElementById('whiteText').color = color;
+            document.getElementById('greenText').color = color;
+            document.getElementById('yellowText').color = color;
+        }
+
+        function changeFontColor(color) {
+            document.getElementById('white').style.color = color;
+            document.getElementById('black').style.color = color;
+            document.getElementById('green').style.color = color;
+            document.getElementById('yellow').style.color = color;
+        }
+
+        function changeDisplayHide(display) {
+            document.getElementById('footer').style.display = display;
+            document.getElementById('swatch_group').style.display = display;
+        }
+
+    </script>
+
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        @font-face {
+            font-family: 'lcdmono2normal';
+            src: url('../fonts/lcdm2n__-webfont.eot');
+            src: url('../fonts/lcdm2n__-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/lcdm2n__-webfont.woff') format('woff'),
+            url('../fonts/lcdm2n__-webfont.ttf') format('truetype'),
+            url('../fonts/lcdm2n__-webfont.svg#lcdmono2normal') format('svg');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+
+        /*ALTER THE VALUES INDICATED TO CUSTOMIZE THE DEFAULT SETTINGS*/
+        #header {
+            width: 1250px;
+            background-color: #999;
+        }
+
+        #wrapper {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #clearBar {
+            clear: both;
+        }
+
+        #black {
+            background-color: #000; /*<-- TO CHANGE LEFT PANEL BG COLOR*/
+            width: 25%;
+            font-size: 500px; /*<-- TO CHANGE LEFT PANEL FONT SIZE*/
+            font-family: 'lcdmono2normal', Arial, Helvetica, sans-serif;
+            text-align: center;
+            float: left;
+            color: #FFF;
+            padding-top: 100px;
+        }
+
+        #white {
+            background-color: #000; /*<-- TO CHANGE RIGHT PANEL BG COLOR*/
+            width: 25%;
+            font-family: 'lcdmono2normal', Arial, Helvetica, sans-serif;
+            font-size: 500px; /*<-- TO CHANGE RIGHT PANEL FONT SIZE*/
+            text-align: center;
+            float: left;
+            color: #FFF;
+            padding-top: 100px;
+        }
+
+        #green {
+            background-color: #000; /*<-- TO CHANGE RIGHT PANEL BG COLOR*/
+            width: 25%;
+            font-family: 'lcdmono2normal', Arial, Helvetica, sans-serif;
+            font-size: 500px; /*<-- TO CHANGE RIGHT PANEL FONT SIZE*/
+            text-align: center;
+            float: left;
+            color: #FFF;
+            padding-top: 100px;
+        }
+
+        #yellow {
+            background-color: #000; /*<-- TO CHANGE RIGHT PANEL BG COLOR*/
+            width: 25%;
+            font-family: 'lcdmono2normal', Arial, Helvetica, sans-serif;
+            font-size: 500px; /*<-- TO CHANGE RIGHT PANEL FONT SIZE*/
+            text-align: center;
+            float: left;
+            color: #FFF;
+            padding-top: 100px;
+        }
+
+        #footer {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding-top: 25px;
+            display: block;
+        }
+
+        #score_black {
+            width: 50%;
+            background-color: #000;
+            float: left;
+        }
+
+        #score_white {
+            width: 50%;
+            background-color: #000;
+            float: left;
+        }
+
+        #score_green {
+            width: 50%;
+            background-color: #000;
+            float: left;
+        }
+
+        #score_yellow {
+            width: 50%;
+            background-color: #000;
+            float: left;
+        }
+
+        #reset {
+            float: right;
+        }
+
+        #swatch_group {
+            width: 100%;
+            display: block;
+        }
+
+        #group_black {
+            width: 50%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            float: left;
+        }
+
+        #group_white {
+            width: 50%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            float: right;
+        }
+
+        #group_green {
+            width: 50%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            float: left;
+        }
+
+        #group_yellow {
+            width: 50%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            float: right;
+        }
+
+        #group_size {
+            width: 100%;
+        }
+
+        #size_swatch {
+            width: 50%;
+            float: left;
+        }
+
+        #size_descrip {
+            width: 50%;
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            float: right;
+            padding-top: 10px;
+        }
+
+        #default_button {
+            float: right;
+            padding-right: 5px;
+        }
+
+        .swatch {
+            height: 25px;
+            width: 25px;
+            clear: both;
+        }
+
+        #b-white {
+            background: #FFF;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #b-grey {
+            background: #CCC;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #b-orange {
+            background: #F90;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #b-blue {
+            background: #09F;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #b-green {
+            background: #6F0;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #b-yellow {
+            background: #FF3;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #b-purple {
+            background: #C69;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #b-red {
+            background: #F33;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        #size-1, #size-2, #size-3, #size-4, #size-5, #size-6, #size-7, #size-8, #size-9, #size-10, #size-11, #size-12, #size-13, #size-14, #size-15, #size-16, #size-17, #size-18, #size-19, #size-20 {
+            background: #CCC;
+            border-style: solid;
+            border-width: 1px;
+            height: 25px;
+            color: #333;
+
+            text-align: center;
+            vertical-align: middle;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        /*HEADER STYLING*/
+        .header {
+            width: 100%;
+        }
+
+        .header input {
+            width: 90%;
+            height: 135px;
+            text-align: center;
+            background: #1e1e1e;
+            border: 0;
+            font-family: 'lcdmono2normal', Arial, Helvetica, sans-serif;
+            font-size: 100px;
+            color: #ddd;
+        }
+
+        .headerBlack {
+            width: 25%;
+            float: left;
+            text-align: center;
+        }
+
+        .headerWhite {
+            width: 25%;
+            float: right;
+            text-align: center;
+        }
+
+        .headerGreen {
+            width: 25%;
+            float: right;
+            text-align: center;
+        }
+
+        .headerYellow {
+            width: 25%;
+            float: right;
+            text-align: center;
+        }
+
+        #hideShowBtn {
+            width: 50%;
+            margin-bottom: 15px;
+        }
+
+        #hideShowContainer {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        #hideButton {
+            width: 100px;
+            height: 22px;
+            background: #118E2B;
+            float: left;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        #showButton {
+            width: 100px;
+            height: 22px;
+            background: #AF2222;
+            float: left;
+            margin-left: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<audio id="audiotag1" src="click_2.wav" preload="auto"></audio>
+
+<div class="header">
+    <div class="headerBlack">
+        <form>
+            <input type="blackText" name="nameBlack" value="P1" style="color:#FFFF00">
+        </form>
+    </div> <!-- headerBlack -->
+    <div class="headerWhite">
+        <form>
+            <input type="whiteText" name="nameWhite" value="P2" style="color:#FFFF00">
+        </form>
+    </div> <!-- headerWhite -->
+    <div class="headerGreen">
+        <form>
+            <input type="greenText" name="nameWhite" value="P3" style="color:#FFFF00">
+        </form>
+    </div> <!-- headerWhite -->
+    <div class="headerYellow">
+        <form>
+            <input type="yellowText" name="nameWhite" value="P4" style="color:#FFFF00">
+        </form>
+    </div> <!-- headerWhite -->
+</div> <!-- header -->
+
+<div id="wrapper">
+    <div id="black">
+        <b id='boldStuff_1'>0</b><br/>
+    </div> <!-- end black -->
+
+    <div id="white">
+        <b id='boldStuff_2'>0</b><br/>
+    </div> <!-- end white -->
+
+    <div id="green">
+        <b id='boldStuff_3'>0</b><br/>
+    </div> <!-- end white -->
+
+    <div id="yellow">
+        <b id='boldStuff_4'>0</b><br/>
+    </div> <!-- end white -->
+
+    <div id="clearBar"></div> <!-- clearBar -->
+</div> <!-- end wrapper -->
+
+
+<div id="footer">
+    <div id="score_black">
+
+        <input type='button' onclick='add_score_black()' value="Add"/>
+        <input type='button' onclick='remove_score_black()' value="Remove"/>
+        or press <b>"9"</b>key to ADD, <b>"0 - zero"</b> key to remove and <b>"ESC"</b> to reset
+    </div> <!-- end score_black -->
+
+    <div id="score_white">
+        <input type='button' onclick='add_score_white()' value="Add"/>
+        <input type='button' onclick='remove_score_white()' value="Remove"/>
+        or press <b>"["</b> key to ADD, <b>"]" key</b> to remove and <b>"ESC"</b> to reset
+    </div>
+    <div id="reset">
+        <input type='button' onclick='reset_score()' value="Reset"/>
+    </div> <!-- end reset -->
+
+</div> <!-- end score_white -->
+<div id="clearBar"></div> <!-- clearBar -->
+</div> <!-- end footer -->
+
+
+<div id="swatch_group">
+    <div id="group_black">
+        <table>
+            <tr>
+                <td>
+                    <div id="b-white" class="swatch" onclick="changeColorBlack('#FFF')"></div>
+                </td>
+                <td>
+                    <div id="b-grey" class="swatch" onclick="changeColorBlack('#CCC')"></div>
+                </td>
+                <td>
+                    <div id="b-orange" class="swatch" onclick="changeColorBlack('#F90')"></div>
+                </td>
+                <td>
+                    <div id="b-blue" class="swatch" onclick="changeColorBlack('#09F')"></div>
+                </td>
+                <td>
+                    <div id="b-green" class="swatch" onclick="changeColorBlack('#6F0')"></div>
+                </td>
+                <td>
+                    <div id="b-yellow" class="swatch" onclick="changeColorBlack('#FF3')"></div>
+                </td>
+                <td>
+                    <div id="b-purple" class="swatch" onclick="changeColorBlack('#C69')"></div>
+                </td>
+                <td>
+                    <div id="b-red" class="swatch" onclick="changeColorBlack('#F33')"></div>
+                </td>
+                <td> Click on colour tile to change the background colour</td>
+            </tr>
+        </table>
+    </div> <!-- group_black -->
+
+
+    <div id="group_white">
+        <table>
+            <tr>
+                <td>
+                    <div id="b-white" class="swatch" onclick="changeColorWhite('#FFF')"></div>
+                </td>
+                <td>
+                    <div id="b-grey" class="swatch" onclick="changeColorWhite('#CCC')"></div>
+                </td>
+                <td>
+                    <div id="b-orange" class="swatch" onclick="changeColorWhite('#F90')"></div>
+                </td>
+                <td>
+                    <div id="b-blue" class="swatch" onclick="changeColorWhite('#09F')"></div>
+                </td>
+                <td>
+                    <div id="b-green" class="swatch" onclick="changeColorWhite('#6F0')"></div>
+                </td>
+                <td>
+                    <div id="b-yellow" class="swatch" onclick="changeColorWhite('#FF3')"></div>
+                </td>
+                <td>
+                    <div id="b-purple" class="swatch" onclick="changeColorWhite('#C69')"></div>
+                </td>
+                <td>
+                    <div id="b-red" class="swatch" onclick="changeColorWhite('#F33')"></div>
+                </td>
+                <td> Click on colour tile to change the background colour</td>
+            </tr>
+        </table>
+
+        <div id="group_green">
+            <table>
+                <tr>
+                    <td>
+                        <div id="b-white" class="swatch" onclick="changeColorWhite('#FFF')"></div>
+                    </td>
+                    <td>
+                        <div id="b-grey" class="swatch" onclick="changeColorWhite('#CCC')"></div>
+                    </td>
+                    <td>
+                        <div id="b-orange" class="swatch" onclick="changeColorWhite('#F90')"></div>
+                    </td>
+                    <td>
+                        <div id="b-blue" class="swatch" onclick="changeColorWhite('#09F')"></div>
+                    </td>
+                    <td>
+                        <div id="b-green" class="swatch" onclick="changeColorWhite('#6F0')"></div>
+                    </td>
+                    <td>
+                        <div id="b-yellow" class="swatch" onclick="changeColorWhite('#FF3')"></div>
+                    </td>
+                    <td>
+                        <div id="b-purple" class="swatch" onclick="changeColorWhite('#C69')"></div>
+                    </td>
+                    <td>
+                        <div id="b-red" class="swatch" onclick="changeColorWhite('#F33')"></div>
+                    </td>
+                    <td> Click on colour tile to change the background colour</td>
+                </tr>
+            </table>
+
+            <div id="group_yellow">
+                <table>
+                    <tr>
+                        <td>
+                            <div id="b-white" class="swatch" onclick="changeColorWhite('#FFF')"></div>
+                        </td>
+                        <td>
+                            <div id="b-grey" class="swatch" onclick="changeColorWhite('#CCC')"></div>
+                        </td>
+                        <td>
+                            <div id="b-orange" class="swatch" onclick="changeColorWhite('#F90')"></div>
+                        </td>
+                        <td>
+                            <div id="b-blue" class="swatch" onclick="changeColorWhite('#09F')"></div>
+                        </td>
+                        <td>
+                            <div id="b-green" class="swatch" onclick="changeColorWhite('#6F0')"></div>
+                        </td>
+                        <td>
+                            <div id="b-yellow" class="swatch" onclick="changeColorWhite('#FF3')"></div>
+                        </td>
+                        <td>
+                            <div id="b-purple" class="swatch" onclick="changeColorWhite('#C69')"></div>
+                        </td>
+                        <td>
+                            <div id="b-red" class="swatch" onclick="changeColorWhite('#F33')"></div>
+                        </td>
+                        <td> Click on colour tile to change the background colour</td>
+                    </tr>
+                </table>
+
+            </div> <!-- group_black -->
+
+            <div id="group_size">
+                <div id="size_swatch">
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="size-1" class="swatch" onclick="changeSize('50px')">1</div>
+                            </td>
+                            <td>
+                                <div id="size-2" class="swatch" onclick="changeSize('100px')">2</div>
+                            </td>
+                            <td>
+                                <div id="size-3" class="swatch" onclick="changeSize('150px')">3</div>
+                            </td>
+                            <td>
+                                <div id="size-4" class="swatch" onclick="changeSize('200px')">4</div>
+                            </td>
+                            <td>
+                                <div id="size-5" class="swatch" onclick="changeSize('250px')">5</div>
+                            </td>
+                            <td>
+                                <div id="size-6" class="swatch" onclick="changeSize('300px')">6</div>
+                            </td>
+                            <td>
+                                <div id="size-7" class="swatch" onclick="changeSize('350px')">7</div>
+                            </td>
+                            <td>
+                                <div id="size-8" class="swatch" onclick="changeSize('400px')">8</div>
+                            </td>
+                            <td>
+                                <div id="size-9" class="swatch" onclick="changeSize('450px')">9</div>
+                            </td>
+                            <td>
+                                <div id="size-10" class="swatch" onclick="changeSize('500px')">10</div>
+                            </td>
+                            <td>
+                                <div id="size-11" class="swatch" onclick="changeSize('550px')">11</div>
+                            </td>
+                            <td>
+                                <div id="size-12" class="swatch" onclick="changeSize('600px')">12</div>
+                            </td>
+                            <td>
+                                <div id="size-13" class="swatch" onclick="changeSize('650px')">13</div>
+                            </td>
+                            <td>
+                                <div id="size-14" class="swatch" onclick="changeSize('700px')">14</div>
+                            </td>
+                            <td>
+                                <div id="size-15" class="swatch" onclick="changeSize('750px')">15</div>
+                            </td>
+                            <td>
+                                <div id="size-16" class="swatch" onclick="changeSize('800px')">16</div>
+                            </td>
+                            <td>
+                                <div id="size-17" class="swatch" onclick="changeSize('850px')">17</div>
+                            </td>
+                            <td>
+                                <div id="size-18" class="swatch" onclick="changeSize('900px')">18</div>
+                            </td>
+                            <td>
+                                <div id="size-19" class="swatch" onclick="changeSize('950px')">19</div>
+                            </td>
+                            <td>
+                                <div id="size-20" class="swatch" onclick="changeSize('1000px')">20</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div> <!-- size_swatch -->
+
+                <div id="size_descrip">
+                    Click on number tiles to change the font size
+
+                    <div id="default_button">
+                        <input type='button' onclick='default_settings()' value="Default"/>
+                    </div> <!-- default_button -->
+                </div> <!-- group_descrip -->
+            </div> <!-- group_size -->
+
+        </div> <!-- swatch_group -->
+
+        <script type="text/javascript">
+            changeDisplayHide('none');
+            this.changeSize('100px');
+            this.changeFontColor('#0f0');
+            setInterval(readText, 3);
+        </script>
+</body>
+</html>
