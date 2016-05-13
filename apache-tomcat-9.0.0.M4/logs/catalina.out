@@ -872,3 +872,50 @@ Caused by: java.net.BindException: Address already in use
 13-May-2016 10:05:14.578 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
 13-May-2016 10:05:14.578 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
 13-May-2016 10:05:14.578 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+13-May-2016 10:52:15.773 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+13-May-2016 10:52:15.774 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+13-May-2016 10:52:15.827 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+13-May-2016 10:52:15.879 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+13-May-2016 10:52:15.898 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+13-May-2016 10:52:15.901 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+13-May-2016 10:52:15.901 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+13-May-2016 10:52:15.902 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+13-May-2016 10:52:26.668 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.0.M4
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 12 2016 11:39:59 UTC
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.0.0
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.11.4
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home/jre
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_74-b02
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4
+13-May-2016 10:52:26.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4
+13-May-2016 10:52:26.671 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/conf/logging.properties
+13-May-2016 10:52:26.671 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-May-2016 10:52:26.671 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4
+13-May-2016 10:52:26.671 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4
+13-May-2016 10:52:26.671 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/temp
+13-May-2016 10:52:26.671 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/cwu/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+13-May-2016 10:52:26.763 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+13-May-2016 10:52:26.782 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+13-May-2016 10:52:26.784 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+13-May-2016 10:52:26.785 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+13-May-2016 10:52:26.785 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 372 ms
+13-May-2016 10:52:26.807 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+13-May-2016 10:52:26.807 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.0.M4
+13-May-2016 10:52:26.812 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/docs
+13-May-2016 10:52:26.977 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/docs has finished in 164 ms
+13-May-2016 10:52:26.977 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/examples
+13-May-2016 10:52:27.143 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/examples has finished in 165 ms
+13-May-2016 10:52:27.143 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/host-manager
+13-May-2016 10:52:27.167 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/host-manager has finished in 24 ms
+13-May-2016 10:52:27.167 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/jep
+13-May-2016 10:52:27.181 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/jep has finished in 14 ms
+13-May-2016 10:52:27.181 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/manager
+13-May-2016 10:52:27.192 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/manager has finished in 11 ms
+13-May-2016 10:52:27.192 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/ROOT
+13-May-2016 10:52:27.200 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /Users/cwu/Documents/GitHub/TurnHackthon2016/apache-tomcat-9.0.0.M4/webapps/ROOT has finished in 8 ms
+13-May-2016 10:52:27.202 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-8080]
+13-May-2016 10:52:27.205 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [ajp-nio-8009]
+13-May-2016 10:52:27.205 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 419 ms

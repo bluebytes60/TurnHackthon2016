@@ -17,6 +17,8 @@ class Game():
     self.output_score()
     self.output_answered_questions()
     self.output_request(-1, 0, 1)
+    self.question_list.dump_questions_pickle()
+    self.player_list.dump_player_pickle()
 
 
   def answer(self, player_id, question_id, choice_id):
@@ -24,19 +26,25 @@ class Game():
     player = self.player_list.players[player_id]
     question = self.question_list.questions[question_id]
 
-    question.state = 1
-
     if question.aid == choice_id:
       player.update_score(question.score)
       question.state = 2
       self.output_request(question_id, 2, 1)
     else:
-      player.update_score(-question.score)
+      if question.state != 0:
+        player.update_score(-question.score)
       self.output_request(question_id, 1, 0)
+      question.state = 1
 
+    self.question_list.dump_questions_pickle()
+    self.player_list.dump_player_pickle()
     self.output_score()
     self.output_answered_questions()
     self.player_list.dump_player_pickle()
+
+
+  def home(self):
+    self.output_request(-1, 0, 1)
 
 
   def output_score(self):
@@ -54,10 +62,11 @@ class Game():
 
   def output_answered_questions(self):
     print(self.question_list.questions.keys())
-    answered_id = [qid for qid in self.question_list.questions.keys() if self.question_list.questions[qid].state != 0]
-    str_output = ' '.join(map(str, answered_id))
+    answered_id = [str(qid) for qid in self.question_list.questions.keys() if self.question_list.questions[qid].state != 0]
+    output_json = {"ans": answered_id}
+    # str_output = ' '.join(map(str, answered_id))
     with open("../status/" + self.answered_file, "w") as output:
-      output.write(str_output)
+      json.dump(output_json, output, indent=4)
 
 
   def select(self, question_id):
@@ -110,8 +119,14 @@ class QuestionList():
     with open(self.question_file) as input_file:
       questions = json.load(input_file)
 
-    for q in questions:
-      self.questions[q['id']] = Question(qid=q['id'], aid=q['answer'], score=q['score'], state=q['state'])
+    # for q in questions:
+      # self.questions[q['id']] = Question(qid=q['id'], aid=q['answer'], score=q['score'], state=q['state'])
+
+    # for i in range(25):
+    for i in [0, 1, 5]:
+      q = questions[str(i)]
+      score = (i//5 + 1) * 100
+      self.questions[i] = Question(qid=i, aid=int(q['answer']), score=score)
 
     print("Questions loaded.")
 

@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 # from optparse import OptionParser
 import sys
 from game import *
 
 players = PlayerList( "../json/players.json")
-question_list = QuestionList("../json/questions.json")
+question_list = QuestionList("../json/game1.json")
 game = Game(question_list, players, "score", "status", "answered_id")
 
 option = sys.argv[1]
@@ -27,6 +27,8 @@ elif option == 's':
   # question_id = int(args[0])
   question_id = (ord(args[0][0]) - ord('a')) * 5 + int(args[0][1])
   game.select(question_id)
+elif option == 'h':
+  game.home()
 else:
   print("Usage: ./Jeopardy.py a Player_id Question_id Choice")
 
