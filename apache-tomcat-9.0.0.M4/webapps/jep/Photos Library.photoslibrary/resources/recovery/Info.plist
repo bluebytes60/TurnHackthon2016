@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DatabaseMinorVersion</key>
+	<integer>1</integer>
+	<key>DatabaseVersion</key>
+	<integer>112</integer>
+	<key>LibrarySchemaVersion</key>
+	<integer>1801</integer>
+	<key>SnapshotComplete</key>
+	<true/>
+	<key>SnapshotCompletedDate</key>
+	<date>2016-05-13T17:03:10Z</date>
+	<key>SnapshotLastAttemptStartDate</key>
+	<date>2016-05-13T17:03:10Z</date>
+	<key>SnapshotTables</key>
+	<dict>
+		<key>RKAdminData</key>
+		<dict>
+			<key>0000000000.lisj</key>
+			<string>4d5c32dcd48e31a605e44b9dbff19875a00e06c7</string>
+		</dict>
+		<key>RKAlbum</key>
+		<dict>
+			<key>0000000000.lisj</key>
+			<string>b524ec8f57f21ab152fe01e7f7ab666f6f9329ab</string>
+		</dict>
+		<key>RKCustomSortOrder</key>
+		<dict>
+			<key>0000000000.lisj</key>
+			<string>b5eecf16920f70d3cccfea56f9bb24faec941225</string>
+		</dict>
+		<key>RKFolder</key>
+		<dict>
+			<key>0000000000.lisj</key>
+			<string>5b3afbe3dc2fd63ae0b5394438ee440ed5822d21</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

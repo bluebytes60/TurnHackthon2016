@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Turn Jeopardy</title>
+		<meta name="description" content="3D Grid Effect: Recreation of the effect seen in the prototype app by Marcus Eckert | Demo 1" />
+		<meta name="keywords" content="3d, grid, effect, flip, css transform, perspective, web design" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+		<script src="./js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+<!--
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/ItemTransitions/"><span>Previous Demo</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18742"><span>Back to the Codrops Article</span></a></span>
+			</div>
+-->
+			<header class="codrops-header">
+				<h1>Turn Jeopardy</h1>
+<!--
+				<nav class="codrops-demos">
+					<a class="current-demo" href="index.html">Vertical</a>
+					<a href="index2.html">Horizontal</a>
+				</nav>
+-->
+			</header>
+			<section class="grid3d vertical" id="grid3d">
+				<div class="grid-wrap">
+					<div class="grid">
+
+						<figure>Milestones</figure>
+						<figure>Who Am I  </figure>
+						<figure>People</figure>
+						<figure>Engineering</figure>
+						<figure>Product</figure>
+
+
+						<figure><img id="id_cat0" src="img/File$100.png.webp"/></figure>
+
+						<figure><img id="id_cat1" src="img/File$100.png.webp"/></figure>
+
+						<figure><img id="id_cat2" src="img/File$100.png.webp"/></figure>
+
+						<figure><img id="id_cat3" src="img/File$100.png.webp"/></figure>
+
+						<figure><img id="id_cat4" src="img/File$100.png.webp"/></figure>
+
+						<figure><img id="id_cat5" src="img/File$200.png.webp"/></figure>
+
+						<figure><img id="id_cat6" src="img/File$200.png.webp"/></figure>
+
+						<figure><img id="id_cat7" src="img/File$200.png.webp"/></figure>
+
+						<figure><img id="id_cat8" src="img/File$200.png.webp"/></figure>
+
+						<figure><img id="id_cat9" src="img/File$200.png.webp"/></figure>
+
+						<figure><img id="id_cat10" src="img/File$300.png.webp"/></figure>
+
+						<figure><img id="id_cat11" src="img/File$300.png.webp"/></figure>
+
+						<figure><img id="id_cat12" src="img/File$300.png.webp"/></figure>
+
+						<figure><img id="id_cat13" src="img/File$300.png.webp"/></figure>
+
+						<figure><img id="id_cat14" src="img/File$300.png.webp"/></figure>
+
+						<figure><img id="id_cat15" src="img/File$400.png.webp"/></figure>
+
+						<figure><img id="id_cat16" src="img/File$400.png.webp"/></figure>
+
+						<figure><img id="id_cat17" src="img/File$400.png.webp"/></figure>
+
+						<figure><img id="id_cat18" src="img/File$400.png.webp"/></figure>
+
+						<figure><img id="id_cat19" src="img/File$400.png.webp"/></figure>
+
+						<figure><img id="id_cat20" src="img/File$500.png.webp"/></figure>
+
+						<figure><img id="id_cat21" src="img/File$500.png.webp"/></figure>
+
+						<figure><img id="id_cat22" src="img/File$500.png.webp"/></figure>
+
+						<figure><img id="id_cat23" src="img/File$500.png.webp"/></figure>
+
+						<figure><img id="id_cat24" src="img/File$500.png.webp"/></figure>
+
+
+
+
+						<!--
+                                                <figure><img src="img/File$200.jpg.webp"alt="img01" id="A1"/></figure>
+                                                <figure><img src="img/File$200.jpg.webp" alt="img06" id="A2"/></figure>
+                                                <figure><img src="img/8.jpg" alt="img011"/></figure>
+                                                <figure><img src="img/2.jpg" alt="img016"/></figure>
+                                                <figure><img src="img/4.jpg" alt="img021"/></figure>
+                                                <figure><img src="img/3.jpg" alt="img02"/></figure>
+                                                <figure><img src="img/9.jpg" alt="img07"/></figure>
+                                                <figure><img src="img/6.jpg" alt="img12"/></figure>
+                                                <figure><img src="img/7.jpg" alt="img17"/></figure>
+                                                <figure><img src="img/1.jpg" alt="img22"/></figure>
+                                                <figure><img src="img/5.jpg" alt="img03"/></figure>
+                                                <figure><img src="img/8.jpg" alt="img08"/></figure>
+                                                <figure><img src="img/2.jpg" alt="img13"/></figure>
+                                                <figure><img src="img/4.jpg" alt="img18"/></figure>
+                                                <figure><img src="img/3.jpg" alt="img23"/></figure>
+                                                <figure><img src="img/9.jpg" alt="img04"/></figure>
+                                                <figure><img src="img/6.jpg" alt="img09"/></figure>
+                                                <figure><img src="img/7.jpg" alt="img14"/></figure>
+                                                <figure><img src="img/1.jpg" alt="img19"/></figure>
+                                                <figure><img src="img/5.jpg" alt="img24"/></figure>
+                                                <figure><img src="img/8.jpg" alt="img05"/></figure>
+                                                <figure><img src="img/2.jpg" alt="img10"/></figure>
+                                                <figure><img src="img/4.jpg" alt="img15"/></figure>
+                                                <figure><img src="img/3.jpg" alt="img20"/></figure>
+                                                <figure><img src="img/9.jpg" alt="img25"/></figure>
+                        -->
+					</div>
+				</div><!-- /grid-wrap -->
+				<div class="content">
+					<div class="C1">
+						<p  id="id_0_q"></p>
+						<p  id="id_0_a0"></p>
+						<p  id="id_0_a1"></p>
+						<p  id="id_0_a2"></p>
+					</div>
+					<div>
+						<p  id="id_1_q"></p>
+						<p  id="id_1_a0"></p>
+						<p  id="id_1_a1"></p>
+						<p  id="id_1_a2"></p>
+					</div>
+					<div>
+						<p  id="id_2_q"></p>
+						<p  id="id_2_a0"></p>
+						<p  id="id_2_a1"></p>
+						<p  id="id_2_a2"></p>
+					</div>
+					<div>
+						<p  id="id_3_q"></p>
+						<p  id="id_3_a0"></p>
+						<p  id="id_3_a1"></p>
+						<p  id="id_3_a2"></p>
+					</div>
+					<div>
+						<p  id="id_4_q"></p>
+						<p  id="id_4_a0"></p>
+						<p  id="id_4_a1"></p>
+						<p  id="id_4_a2"></p>
+					</div>
+					<div>
+						<p  id="id_5_q"></p>
+						<p  id="id_5_a0"></p>
+						<p  id="id_5_a1"></p>
+						<p  id="id_5_a2"></p>
+					</div>
+					<div>
+						<p  id="id_6_q"></p>
+						<p  id="id_6_a0"></p>
+						<p  id="id_6_a1"></p>
+						<p  id="id_6_a2"></p>
+					</div>
+					<div>
+						<p  id="id_7_q"></p>
+						<p  id="id_7_a0"></p>
+						<p  id="id_7_a1"></p>
+						<p  id="id_7_a2"></p>
+					</div>
+					<div>
+						<p  id="id_8_q"></p>
+						<p  id="id_8_a0"></p>
+						<p  id="id_8_a1"></p>
+						<p  id="id_8_a2"></p>
+					</div>
+					<div>
+						<p  id="id_9_q"></p>
+						<p  id="id_9_a0"></p>
+						<p  id="id_9_a1"></p>
+						<p  id="id_9_a2"></p>
+					</div>
+					<div>
+						<p  id="id_10_q"></p>
+						<p  id="id_10_a0"></p>
+						<p  id="id_10_a1"></p>
+						<p  id="id_10_a2"></p>
+					</div>
+					<div>
+						<p  id="id_11_q"></p>
+						<p  id="id_11_a0"></p>
+						<p  id="id_11_a1"></p>
+						<p  id="id_11_a2"></p>
+					</div>
+					<div>
+						<p  id="id_12_q"></p>
+						<p  id="id_12_a0"></p>
+						<p  id="id_12_a1"></p>
+						<p  id="id_12_a2"></p>
+					</div>
+					<div>
+						<p  id="id_13_q"></p>
+						<p  id="id_13_a0"></p>
+						<p  id="id_13_a1"></p>
+						<p  id="id_13_a2"></p>
+					</div>
+					<div>
+						<p  id="id_14_q"></p>
+						<p  id="id_14_a0"></p>
+						<p  id="id_14_a1"></p>
+						<p  id="id_14_a2"></p>
+					</div>
+					<div>
+						<p  id="id_15_q"></p>
+						<p  id="id_15_a0"></p>
+						<p  id="id_15_a1"></p>
+						<p  id="id_15_a2"></p>
+					</div>
+					<div>
+						<p  id="id_16_q"></p>
+						<p  id="id_16_a0"></p>
+						<p  id="id_16_a1"></p>
+						<p  id="id_16_a2"></p>
+					</div>
+					<div>
+						<p  id="id_17_q"></p>
+						<p  id="id_17_a0"></p>
+						<p  id="id_17_a1"></p>
+						<p  id="id_17_a2"></p>
+					</div>
+					<div>
+						<p  id="id_18_q"></p>
+						<p  id="id_18_a0"></p>
+						<p  id="id_18_a1"></p>
+						<p  id="id_18_a2"></p>
+					</div>
+					<div>
+						<p  id="id_19_q"></p>
+						<p  id="id_19_a0"></p>
+						<p  id="id_19_a1"></p>
+						<p  id="id_19_a2"></p>
+					</div>
+					<div>
+						<p  id="id_20_q"></p>
+						<p  id="id_20_a0"></p>
+						<p  id="id_20_a1"></p>
+						<p  id="id_20_a2"></p>
+					</div>
+					<div>
+						<p  id="id_21_q"></p>
+						<p  id="id_21_a0"></p>
+						<p  id="id_21_a1"></p>
+						<p  id="id_21_a2"></p>
+					</div>
+					<div>
+						<p  id="id_22_q"></p>
+						<p  id="id_22_a0"></p>
+						<p  id="id_22_a1"></p>
+						<p  id="id_22_a2"></p>
+					</div>
+					<div>
+						<p  id="id_23_q"></p>
+						<p  id="id_23_a0"></p>
+						<p  id="id_23_a1"></p>
+						<p  id="id_23_a2"></p>
+					</div>
+					<div>
+						<p  id="id_24_q"></p>
+						<p  id="id_24_a0"></p>
+						<p  id="id_24_a1"></p>
+						<p  id="id_24_a2"></p>
+					</div>
+
+					<span class="loading"></span>
+					<span class="icon close-content" hidden=true></span>
+				</div>
+			</section>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/helper.js"></script>
+		<script src="js/grid3d.js"></script>
+		<script>
+			new grid3D( document.getElementById( 'grid3d' ) );
+		</script>
+		<script src="js/turn-helper.js"></script>
+		<script>
+
+            var gameCats = readJsonFile("./js/game1.json");
+            setCatsToHtml(gameCats);
+
+/*
+document.write("cat0: question=" + cats["0"].question);
+document.write(", answer choice 1=" + cats["0"].answers[0]);
+document.write(", answer choice 2=" + cats["0"].answers[1]);
+document.write(", answer choice 3=" + cats["0"].answers[2]);
+document.write(", answer=" + cats["0"].answer);
+*/
+
+</script>
+			<audio id="womp-womp" src="./js/womp-womp.mp3" type="audio/wav"></audio>
+			<audio id="airhorn" src="./js/airhorn.wav" type="audio/wav"></audio>    
+			<audio id="applause" src="./js/applause.wav" type="audio/wav"></audio>    
+			
+	</body>
+</html>
